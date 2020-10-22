@@ -81,7 +81,31 @@ class LinkedList:
         return False
 
     def remove(self, data):
-        pass
+        '''
+        Removes the first occurence of a Node that contains the data argument as its self.data variable. Returns nothing.
+
+        The time complexity if O(n) because in the worst case scenario we have to visit every Node before we find the one we need to remove        
+        '''
+        if self.head is None:
+            return "Linked List is empty. No Nodes to remove."
+
+        current = self.head
+        prev = None
+        found = False
+        while not found:
+            if current.get_data() == data:
+                found = True
+            else:
+                if current.get_next() == None:
+                    return "The Node with that data value is not present."
+                else:
+                    prev = current
+                    current = current.get_next()
+
+        if prev is None:
+            self.head = current.get_next()
+        else:
+            prev.set_next(current.get_next())
 
 
 '''
