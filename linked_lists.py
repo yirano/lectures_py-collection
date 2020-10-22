@@ -61,7 +61,24 @@ class LinkedList:
         return size
 
     def search(self, data):
-        pass
+        '''
+        Traverses the Linked List and returns True if the data searched for is present in one of the Nodes. Otherwise it returns False
+
+        The time complexity is O(n) because in the worst case we have to go through every Node
+        '''
+        if self.head is None:
+            return "Linked List is empty. No Nodes to search."
+
+        current = self.head
+        while current is not None:
+            # The Node's data matches what we're looking for
+            if current.get_data() == data:
+                return True
+            # The Node's data doesn't match
+            else:
+                current = current.get_next()
+
+        return False
 
     def remove(self, data):
         pass
