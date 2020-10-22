@@ -45,7 +45,20 @@ class LinkedList:
         self.head = temp
 
     def size(self):
-        pass
+        '''
+        Traverses the Linked List and returns an integer value representing the number of nods in the Linked List.
+        The time complexity is O(n) because every Node in the Linked List must be visited in order to calculate the size of the Linked List.
+        '''
+        size = 0
+        if self.head is None:
+            return 0
+
+        current = self.head
+        while current is not None:  # While there are still Nodes left to count
+            size += 1
+            current = current.get_next()
+
+        return size
 
     def search(self, data):
         pass
