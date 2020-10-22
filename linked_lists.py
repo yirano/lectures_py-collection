@@ -93,18 +93,21 @@ class LinkedList:
         prev = None
         found = False
         while not found:
+            # If the current node's data is equal to the data being searched, return True and break out of the while loop.
             if current.get_data() == data:
                 found = True
             else:
+                # If the entire list has been traversed and the next node is 'None', return a message indicating that the node can't be found.
                 if current.get_next() == None:
                     return "The Node with that data value is not present."
-                else:
+                else:  # Move onto the next node. Set the previous node as the current and the current to the next node.
                     prev = current
                     current = current.get_next()
 
-        if prev is None:
+        if prev is None:  # If the previous is None, that means the current node is the head.
             self.head = current.get_next()
         else:
+            # Else, set the pointer of the previous node to the current's next node.
             prev.set_next(current.get_next())
 
 
