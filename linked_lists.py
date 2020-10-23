@@ -100,7 +100,7 @@ class LinkedList:
                 # If the entire list has been traversed and the next node is 'None', return a message indicating that the node can't be found.
                 if current.get_next() == None:
                     return "The Node with that data value is not present."
-                else:  # Move onto the next node. Set the previous node as the current and the current to the next node.
+                else:  # Otherwise, onto the next node. Set the previous node as the current and the current to the next node.
                     prev = current
                     current = current.get_next()
 
